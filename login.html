@@ -1,0 +1,135 @@
+<html>
+<head>
+    <title>Login</title>
+
+	<style>
+        /* card */
+
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 40%;
+            float: right;
+            margin-right: 400px;
+            position: relative;
+            margin-top: 70px;
+            
+            
+        }
+        
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+        /* container */
+
+
+        .container {
+            padding: 30px ;
+            padding-left: 25px;
+            margin-top: 50px;
+
+            
+            
+        }
+        /*  Submit button */
+        .btn {
+            color: rgb(0, 0, 0);
+            border-radius: 25px;
+            margin-left: 90px;
+            transition-duration: 0.4s;
+            background-color: rgb(224, 221, 217);
+            padding: 20px 20px 20px 20px;
+            border: none;
+            font-size: medium;
+            margin-left: 200px;
+            
+            
+        }
+        .btn:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            cursor: pointer;
+            opacity: 0.8;
+            background-color: rgb(39, 122, 218); /* Green */
+            color: white;
+        }
+        
+        .h1 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .p{
+            
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        /* input fields */
+        .input-1 {
+            width: 200px;
+            height: 30px;
+            border-radius: 5px;
+            border-style: double;
+            
+        }
+        .fields{
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+        }
+		body{
+			text-align: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+        
+        </style>
+<script language="JavaScript" type="text/javaScript">
+	function validate(){
+		var flag=false;
+		if(document.login.password.value==""){
+			//document.login.error_password.value.inner.Html="*Please enter password.";
+			document.getElementById("error_password").innerHTML="*Please enter password.";
+			flag=true;
+		}
+		else{
+			document.getElementById("error_password").innerHTML="";
+		}
+		if ( document.login.username.value ==""||document.login.username.value==null )      
+			{
+				document.getElementById("error_username").innerHTML="*Please enter username.";
+			flag=true;
+			}  
+		
+		if( flag==true){
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	</script>
+</head>
+
+<body background="/assets/background-1.jpg">
+	<div class="card">
+		<div class="container">
+			<h1 >Log in</h1>
+	<br>
+	<br>
+	<form name="login" method="POST"  action="login" onsubmit="return validate()">
+		Username:<input type="text" name="username" class="input-1"></input>
+	<span id="error_username" style="color:rgb(255, 0, 0)"></span>
+	<br>
+	<br>
+	Password:<input type="password" name="password" class="input-1"></input>
+	<span id="error_password" style="color:red"></span>
+	<br>
+	<br>
+	<input type="submit" name="login" value="Login" class="btn"></input>
+	</form>
+		</div>
+	</div>
+	
+
+</body>
+</html>
